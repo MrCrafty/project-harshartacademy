@@ -9,13 +9,15 @@ const Header = (): JSX.Element => {
     <header>
       <nav className="container mx-auto flex flex-row items-center justify-between">
         <div className="w-32">
-          <Image
-            src={"https://www.dummyimage.com/250x150?text=Brand%20logo"}
-            height={1500}
-            width={2500}
-            alt="brand logo"
-            className="w-full"
-          />
+          <Link href={"/"}>
+            <Image
+              src={"https://www.dummyimage.com/250x150?text=Brand%20logo"}
+              height={1500}
+              width={2500}
+              alt="brand logo"
+              className="w-full"
+            />
+          </Link>
         </div>
         <div className="w-11/12 flex flex-row justify-between ml-10 text-lg">
           <ul className=" hidden md:flex flex-row [&>li]:mr-5 [&>li]:transition-all [&>li]:duration-200 [&>li]:hover:cursor-pointer ">
@@ -26,7 +28,7 @@ const Header = (): JSX.Element => {
               <Link href="/courses">Courses</Link>
             </li>
           </ul>
-          <ul className=" flex flex-row  [&>li]:mr-5 [&>li]:transition-all [&>li]:duration-200 [&>li]:hover:cursor-pointer ">
+          <ul className=" flex flex-row  [&>li]:ml-5 [&>li]:transition-all [&>li]:duration-200 [&>li]:hover:cursor-pointer ">
             <li
               className={`hover:text-yellow-100 hidden md:${
                 IsLogin ? "hidden" : "block"
@@ -35,21 +37,14 @@ const Header = (): JSX.Element => {
               Login
             </li>
             <li
-              className={
-                `hover:text-yellow-100 hidden md:${
-                  IsLogin ? "block" : "hidden"
-                }`
-                // IsLogin
-                //   ? "hover:text-yellow-100 hidden md:hidden"
-                //   : "hover:text-yellow-100 hidden md:block"
-              }
+              className={`hover:text-yellow-100 hidden md:${
+                IsLogin ? "block" : "hidden"
+              }`}
             >
               Logout
             </li>
-            <li>
-              <PiUserCircleThin
-                className={`text-2xl hidden md:${IsLogin ? "block" : "hidden"}`}
-              />
+            <li className={`hidden md:${IsLogin ? "block" : "hidden"}`}>
+              <PiUserCircleThin className={`text-2xl`} />
             </li>
           </ul>
         </div>

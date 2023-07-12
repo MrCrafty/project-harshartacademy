@@ -16,26 +16,23 @@ type Attributes = {
 const index = ({ data }: { data: Data }) => {
   return (
     <div className="container mx-auto text-stone-200 mt-20">
-      <div className="w-11/12 flex flex-row gap-10 flex-wrap mx-auto">
+      <div className="grid lg:grid-cols-3 gap-5 ">
         <CourseItem
           image={"https://www.dummyimage.com/250x150?text=%20"}
           title={data?.attributes?.Title}
+          link={`/courses/${data?.id}`}
         />
         <CourseItem
           image={"https://www.dummyimage.com/250x150?text=%20"}
           title={data?.attributes?.Title}
+          link={`/courses/${data?.id}`}
         />
         <CourseItem
           image={"https://www.dummyimage.com/250x150?text=%20"}
           title={data?.attributes?.Title}
-        />
-        <CourseItem
-          image={"https://www.dummyimage.com/250x150?text=%20"}
-          title={data?.attributes?.Title}
+          link={`/courses/${data?.id}`}
         />
       </div>
-      {/* <h1 className="text-center text-3xl ">{data?.attributes?.Title}</h1>
-      <p className="text-left text-lg">{data?.attributes?.Description}</p> */}
     </div>
   );
 };
