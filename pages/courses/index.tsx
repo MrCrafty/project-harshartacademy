@@ -1,4 +1,5 @@
 import React from "react";
+import CourseItem from "./CourseItem";
 
 type Data = {
   id: number;
@@ -12,22 +13,39 @@ type Attributes = {
   DayOfClasses: string;
 };
 
-const index = ({ data }: { data: Data[] }) => {
-  console.log(data[0]);
+const index = ({ data }: { data: Data }) => {
   return (
-    <div className="container mx-auto bg-white text-stone-800 ">
-      <h1 className="text-center text-3xl ">{data[0]?.attributes?.Title}</h1>
-      <p className="text-left text-lg">{data[0]?.attributes?.Description}</p>
+    <div className="container mx-auto text-stone-200 mt-20">
+      <div className="w-11/12 flex flex-row gap-10 flex-wrap mx-auto">
+        <CourseItem
+          image={"https://www.dummyimage.com/250x150?text=%20"}
+          title={data?.attributes?.Title}
+        />
+        <CourseItem
+          image={"https://www.dummyimage.com/250x150?text=%20"}
+          title={data?.attributes?.Title}
+        />
+        <CourseItem
+          image={"https://www.dummyimage.com/250x150?text=%20"}
+          title={data?.attributes?.Title}
+        />
+        <CourseItem
+          image={"https://www.dummyimage.com/250x150?text=%20"}
+          title={data?.attributes?.Title}
+        />
+      </div>
+      {/* <h1 className="text-center text-3xl ">{data?.attributes?.Title}</h1>
+      <p className="text-left text-lg">{data?.attributes?.Description}</p> */}
     </div>
   );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await fetch(process.env.API_URL + "/api/courses");
   const data = await res.json();
   return {
     props: {
-      data: data.data,
+      data: data.data[0],
     },
   };
 };
