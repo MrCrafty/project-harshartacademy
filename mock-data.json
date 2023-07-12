@@ -1,0 +1,13 @@
+{
+  "id": 1,
+  "attributes": {
+    "Title": "Child Art - 1",
+    "Description": "This course is designed for children. Students can learn drawing and painting creatively, as well as using their imagination.\nCompositions with the purpose of observing objects of real life and how they relate to each other,\nWe use small 3D models to explain how overlapping objects work and how perspective helps to understand the third dimension of objects.\nOf course, children can learn how to use crayons, pencil color, watercolor, poster color, and mix media in a creative way;",
+    "Fees": 3300,
+    "AgeGroup": "NURSERY TO 4th STD",
+    "createdAt": "2023-07-11T00:30:30.420Z",
+    "updatedAt": "2023-07-11T00:35:11.364Z",
+    "publishedAt": "2023-07-11T00:33:17.027Z",
+    "DaysOfClasses": "(three months/two days a week)"
+  }
+}
