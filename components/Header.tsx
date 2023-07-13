@@ -23,26 +23,35 @@ const Header = (): JSX.Element => {
         </div>
         <div className="w-11/12 flex flex-row justify-between ml-10 text-lg">
           <ul className=" hidden md:flex flex-row [&>li]:mr-5 [&>li]:transition-all [&>li]:duration-200 [&>li]:yhover:cursor-pointer ">
-            <li className="hover:text-yellow-100">
+            <li className="relative inline-block">
               <Link
                 href="/"
-                className={`${
-                  currentPage == "/" ? "underline underline-offset-8" : ""
+                className={`cursor-pointer after:content-[''] after:border-b-2 after:border-red-400 after:absolute after:left-0 after:bottom-0 pb-1 hover:after:w-full after:transition-all after:duration-200 inline-block ${
+                  currentPage == "/" ? "after:w-full" : "after:w-0"
                 }`}
               >
                 Home
               </Link>
             </li>
-            <li className="hover:text-yellow-100">
+            <li className="relative inline-block">
               <Link
                 href="/courses"
-                className={`${
-                  currentPage == "/courses"
-                    ? "underline underline-offset-8"
-                    : ""
+                className={`cursor-pointer after:content-[''] after:border-b-2 after:border-green-400 after:absolute after:left-0 after:bottom-0 pb-1 hover:after:w-full after:transition-all after:duration-200 inline-block ${
+                  currentPage == "/courses" ? "after:w-full" : "after:w-0"
                 }`}
               >
                 Courses
+              </Link>
+            </li>
+
+            <li className="relative inline-block">
+              <Link
+                href="/gallery"
+                className={`cursor-pointer after:content-[''] after:border-b-2 after:border-blue-400 after:absolute after:left-0 after:bottom-0 pb-1 hover:after:w-full after:transition-all after:duration-200 inline-block ${
+                  currentPage == "/gallery" ? "after:w-full" : "after:w-0"
+                }`}
+              >
+                Gallery
               </Link>
             </li>
           </ul>
