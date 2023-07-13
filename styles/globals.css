@@ -27,3 +27,17 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.slick-prev {
+  position: absolute;
+  z-index: 99;
+  top: 50%;
+  left: 5%;
+}
+
+.slick-next {
+  position: absolute;
+  z-index: 99;
+  top: 50%;
+  right: 5%;
+}
