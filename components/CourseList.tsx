@@ -16,11 +16,12 @@ const CourseList = () => {
     <div>
       <h1 className="text-3xl text-center">Courses</h1>
       <div className="grid lg:grid-cols-3 gap-5 ">
-        {Data?.map((course) => (
+        {Data?.map((course, index) => (
           <CourseItem
             image={"https://www.dummyimage.com/250x150?text=%20"}
             title={course?.attributes?.Title}
             link={`/courses/${course?.id}`}
+            key={index}
           />
         ))}
       </div>
