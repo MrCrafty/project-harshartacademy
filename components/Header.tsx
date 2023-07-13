@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { PiUserCircleThin } from "react-icons/pi";
 import { HiOutlineBars3BottomRight } from "react-icons/hi2";
-import { ReactNode, useState } from "react";
+import { useContext } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { isLogin } from "@/pages/_app";
 const Header = (): JSX.Element => {
-  const [IsLogin, setIsLogin] = useState(true);
+  const { IsLogin, setIsLogin } = useContext(isLogin);
   const currentPage = useRouter().pathname;
   return (
     <header>
@@ -56,9 +57,33 @@ const Header = (): JSX.Element => {
             </li>
           </ul>
           <ul className=" flex flex-row  [&>li]:ml-5 [&>li]:transition-all [&>li]:duration-200 [&>li]:hover:cursor-pointer ">
-            <li className={`hover:text-yellow-100`}>Login</li>
-            <li className={`hover:text-yellow-100 `}>Logout</li>
-            <li className={``}>
+            <li
+              className="relative inline-block"
+              onClick={() => {
+                setIsLogin(true);
+              }}
+            >
+              <Link
+                href="#"
+                className={`cursor-pointer after:content-[''] after:border-b-2 after:border-stone-400 after:absolute after:left-0 after:bottom-0 pb-1 hover:after:w-full after:transition-all after:duration-200 inline-block ${
+                  currentPage == "/login" ? "after:w-full" : "after:w-0"
+                } ${IsLogin ? "hidden" : ""}`}
+              >
+                Login
+              </Link>
+            </li>
+            <li
+              className={`relative inline-block cursor-pointer after:content-[''] after:border-b-2 after:border-stone-400 after:absolute after:left-0 after:bottom-0 pb-1 hover:after:w-full after:transition-all after:duration-200 ${
+                currentPage == "/login" ? "after:w-full" : "after:w-0"
+              } ${IsLogin ? "" : "hidden"}`}
+              onClick={() => {
+                setIsLogin(false);
+              }}
+            >
+              Logout
+            </li>
+
+            <li className={`${IsLogin ? "" : "hidden"}`}>
               <PiUserCircleThin className={`text-2xl`} />
             </li>
           </ul>
