@@ -1,10 +1,7 @@
 import React from "react";
-import { Data } from "../../utils/types";
-import { Suspense } from "react";
-import Loading from "@/components/Loading";
 import dynamic from "next/dynamic";
 
-const Courses = ({ data }: { data: Data[] }) => {
+const Courses = () => {
   const ListCourse = dynamic(() => import("../../components/CourseList"), {
     loading: () => (
       <p className="text-center text-white text-5xl">Loading...</p>
@@ -12,19 +9,10 @@ const Courses = ({ data }: { data: Data[] }) => {
   });
   return (
     <div className="container mx-auto text-stone-200 mt-20">
+      <h1 className="text-3xl text-center">Courses</h1>
       <ListCourse />
     </div>
   );
-};
-
-export const getServerSideProps = async () => {
-  const res = await fetch("https://strapi-harsh.onrender.com/api/courses");
-  const data = await res.json();
-  return {
-    props: {
-      data: data.data,
-    },
-  };
 };
 
 export default Courses;

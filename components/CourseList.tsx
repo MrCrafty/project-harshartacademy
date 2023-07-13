@@ -14,7 +14,6 @@ const CourseList = () => {
   });
   return (
     <div>
-      <h1 className="text-3xl text-center">Courses</h1>
       <div className="grid lg:grid-cols-3 gap-5 ">
         {Data?.map((course, index) => (
           <CourseItem
