@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
-import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 function NextArrow(props: any) {
   const { className, style, onClick } = props;
@@ -15,10 +15,14 @@ function NextArrow(props: any) {
         color: "black",
         cursor: "pointer",
         fontSize: "2rem",
+        position: "absolute",
+        zIndex: 99,
+        top: "50%",
+        right: "5%",
       }}
       onClick={onClick}
     >
-      <BiSolidRightArrow />
+      <IoIosArrowForward />
     </div>
   );
 }
@@ -33,10 +37,14 @@ function PrevArrow(props: any) {
         color: "black",
         cursor: "pointer",
         fontSize: "2rem",
+        position: "absolute",
+        zIndex: 99,
+        top: "50%",
+        left: "5%",
       }}
       onClick={onClick}
     >
-      <BiSolidLeftArrow />
+      <IoIosArrowBack />
     </div>
   );
 }
