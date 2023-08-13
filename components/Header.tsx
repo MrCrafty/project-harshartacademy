@@ -23,7 +23,7 @@ const Header = (): JSX.Element => {
           </Link>
         </div>
         <div className="w-11/12 flex flex-row justify-between ml-10 text-lg">
-          <ul className=" hidden md:flex flex-row [&>li]:mr-5 [&>li]:transition-all [&>li]:duration-200 [&>li]:yhover:cursor-pointer ">
+          <ul className=" hidden md:flex flex-row [&>li]:mr-5 [&>li]:transition-all [&>li]:duration-200 [&>li]:hover:cursor-pointer ">
             <li className="relative inline-block">
               <Link
                 href="/"
