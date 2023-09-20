@@ -7,5 +7,13 @@ type Attributes = {
   Description: string;
   Fees: number;
   AgeGroup: string;
-  DayOfClasses: string;
+  DaysOfClasses: string;
 };
+
+export type Course = {
+  Title: string;
+  Description: string;
+  Fees: number;
+  AgeGroup: string;
+  DaysOfClasses: string;
+}

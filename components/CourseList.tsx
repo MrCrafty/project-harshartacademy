@@ -5,13 +5,13 @@ import CourseItem from "./CourseItem";
 const CourseList = () => {
   const [Data, setData] = useState<Data[]>([]);
   const fetchData = async () => {
-    const res = await fetch("https://strapi-harsh.onrender.com/api/courses");
+    const res = await fetch(process.env.STRAPI_API_URL as string);
     const data = await res.json();
     setData(data.data);
   };
   useEffect(() => {
     fetchData();
-  });
+  }, []);
   return (
     <div>
       <div className="grid lg:grid-cols-3 gap-5 ">
